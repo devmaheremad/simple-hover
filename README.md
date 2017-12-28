@@ -2,7 +2,7 @@
 
 Simple Hover is a small gallery like showcase with different info card hover variations.
 
-![Image Glitch Effect](#.jpg)
+![Simple Hover Cover](https://pineco.de/wp-content/uploads/2017/12/simple-hover-cover-b.svg)
 
 [Demo](https://pineco.de/project/simple-hover/)
 
