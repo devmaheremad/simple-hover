@@ -1,0 +1,37 @@
+$animation-in-easing: cubic-bezier(0.54, 0.15, 0.22, 0.89);
+$animation-out-easing: linear;
+
+
+// Generic wrapper
+
+.sh-container {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    backface-visibility: hidden;
+    
+    &:not(:last-child) {
+        margin-bottom: 15px;
+
+        @media (min-width: 690px) {
+            margin-bottom: 20px;
+        }
+        
+        @media (min-width: 992px) {
+             margin-bottom: 30px;
+        }
+    }
+}
+
+// Import Type Alpha
+@import './scss/components/alpha'; 
+
+// Import Type Beta
+@import './scss/components/beta';
+
+// Import Type Gamma
+@import './scss/components/gamma';
+
+// Import Type Delta
+@import './scss/components/delta';

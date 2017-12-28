@@ -1,0 +1,136 @@
+
+// ------------------------------
+// Type: Alpha
+// ------------------------------
+
+.sh-effect--alpha {
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.2);
+        opacity: 0;
+        transition: opacity 0.2s $animation-out-easing;
+    }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 70%;
+        opacity: 0.3;
+        background: linear-gradient(to bottom, rgba(125,185,232,0) 0%,rgba(1,2,2,1) 99%,rgba(0,0,0,1) 100%);
+    }
+    
+    &:hover {
+        .sh-effect--alpha__overlay {
+            transform: translate3d(0,0,0);
+            transition: transform 0.2s $animation-in-easing;
+        }
+        
+        .sh-effect--alpha__title {
+            opacity: 1;
+            transform: translate3d(0,0,0);
+            transition: 0.1s 0.2s $animation-in-easing;
+        }
+        
+        .sh-effect--alpha__meta {
+            opacity: 1;
+            transform: translate3d(0,0,0);
+            transition: 0.15s 0.2s $animation-in-easing;
+        }
+        
+        &::before {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.2s $animation-in-easing;
+        }
+    }
+
+    &__overlay {
+        background: #000;
+        color: #fff;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translate3d(0,calc(100% + 1px),0);
+        z-index: 10;
+        transition: transform 0.2s $animation-out-easing;
+        background: #fff;
+        color: #000;
+        padding: 20px;
+        
+        @media (min-width: 1200px) {
+            padding: 25px 30px;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        transform: translate3d(0,30%,0);
+        opacity: 0;
+        transition: 0.2s $animation-out-easing;
+        
+        @media (min-width: 1200px) {
+            font-size: 21px;
+        }
+    }
+    
+    &__meta {
+        color: #aaa;
+        margin-top: 5px;
+        transform: translate3d(0,30%,0);
+        opacity: 0;
+        transition: 0.2s $animation-out-easing;
+        font-size: 13px;
+        
+        @media (min-width: 1200px) {
+            font-size: 16px;
+        }
+    }
+    
+    &__author-meta {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: -55px;
+        left: 20px;
+        
+        @media (min-width: 1200px) {
+            top: -65px;
+            left: 25px;
+        }
+    }
+    
+    &__avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 15px;
+        
+        @media (min-width: 1200px) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
+    &__date {
+        font-size: 11px;
+        color: #fff;
+        text-shadow: 0 0 4px rgba(0,0,0,0.2);
+        
+        @media (min-width: 1200px) {
+            font-size: 13px;
+        }
+    }
+}

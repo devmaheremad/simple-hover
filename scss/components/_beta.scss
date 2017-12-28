@@ -1,0 +1,149 @@
+
+// ------------------------------
+// Type: Beta
+// ------------------------------
+
+.sh-effect--beta {
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(255,182,137,1) 100%);
+        opacity: 0;
+        transition: opacity 0.2s $animation-in-easing;
+        z-index: 5;
+    }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 70%;
+        opacity: 0.3;
+        background: linear-gradient(to bottom, rgba(125,185,232,0) 0%,rgba(1,2,2,1) 99%,rgba(0,0,0,1) 100%);
+    }
+    
+    &:hover {
+        .sh-effect--beta__overlay {
+            transform: translate3d(0,0,0);
+            transition: transform 0.2s $animation-out-easing;
+        }
+        
+        .sh-effect--beta__title {
+            opacity: 1;
+            transform: translate3d(0,0,0);
+            transition: 0.2s $animation-out-easing;
+        }
+        
+        .sh-effect--beta__meta {
+            opacity: 1;
+            transform: translate3d(0,0,0);
+            transition: 0.2s 0.05s $animation-out-easing;
+        }
+        
+        .sh-effect--beta__image {
+            transform: scale(1.2) translate3d(10px,0,0);
+            transition: transform 0.2s $animation-out-easing;
+            
+            @media (min-width: 1200px) {
+                transform: scale(1.2) translate3d(30px,0,0);
+            }
+        }
+        
+        &::before {
+            opacity: 0.5;
+            visibility: visible;
+            transition: opacity 0.2s $animation-out-easing;
+        }
+    }
+    
+    &__image {
+        transform: scale(1.2);
+        transition: transform 0.2s $animation-in-easing;
+    }
+
+    &__overlay {
+        color: #fff;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        transition: transform 0.2s $animation-in-easing;
+        color: #fff;
+        padding: 20px;
+        
+        @media (min-width: 1200px) {
+            padding: 25px 30px;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        transition: 0.2s $animation-in-easing;
+        transform: translate3d(40px,0,0);
+        opacity: 0;
+        
+        @media (min-width: 1200px) {
+            font-size: 21px;
+        }
+    }
+    
+    &__meta {
+        color: rgba(255,255,255,0.6);
+        margin-top: 5px;
+        transition: 0.2s $animation-in-easing;
+        font-size: 13px;
+        transform: translate3d(40px,0,0);
+        opacity: 0;
+        
+        @media (min-width: 1200px) {
+            font-size: 16px;
+        }
+    }
+    
+    &__author-meta {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 15;
+        
+        @media (min-width: 1200px) {
+            top: 25px;
+            left: 25px;
+        }
+    }
+    
+    &__avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 15px;
+        
+        @media (min-width: 1200px) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
+    &__date {
+        font-size: 11px;
+        color: #fff;
+        text-shadow: 0 0 4px rgba(0,0,0,0.2);
+        
+        @media (min-width: 1200px) {
+            font-size: 13px;
+        }
+    }
+}
